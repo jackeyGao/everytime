@@ -1,0 +1,20 @@
+.st-b9 .st-dk {
+    height: 1px!important;     
+}
+div[data-testid="stNotification"] {
+  background-color: white;
+}
+
+div[data-testid="stNotification"] p {
+  font-family: Optima-Regular, "Source Han Serif SC", Manuale,  "Consolas",  "Noto Serif CJK SC", STFangsong,FangSong,FangSong_GB2312, "Songti SC", STSong,  serif, PingFangSC-Light, PingFangTC-Light, sans-serif, Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol!important;
+  font-style:oblique;
+  font-size: 1.2rem!important;
+  color: #404040;
+}
+            
+div[data-testid="stVerticalBlockBorderWrapper"] {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}  

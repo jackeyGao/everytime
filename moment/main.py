@@ -1,4 +1,4 @@
-import time, os
+import time, os, emoji
 import streamlit as st
 from datetime import datetime
 from datetime import timezone
@@ -64,8 +64,16 @@ while True:
         st.session_state["OPENAI_API_KEY"] = openai_api_key
         time.sleep(1)
     else:
-        answer = get_answer(openai_api_key, datetime.now(tz=tz))
-        container.success(answer, icon=page_icon)
+        answer = get_answer(
+            api_key=openai_api_key, 
+            time=datetime.now(tz=tz), 
+            params=st.query_params
+        )
+        if emoji.is_emoji(answer[0]):
+            container.success(body=answer.replace(answer[0], ''), icon=answer[0])
+        else:
+            container.success(body=answer, icon=page_icon)
+
         time.sleep(60)
 
     st.rerun()

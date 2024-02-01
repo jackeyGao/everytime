@@ -58,7 +58,7 @@ while True:
             type="password",
             placeholder="Paste your OpenAI API key here (sk-...)",
             help="You can get your API key from https://platform.openai.com/account/api-keys.",  # noqa: E501
-            value=os.environ.get("OPENAI_API_KEY", "")
+            value=os.environ.get("OPENAI_API_KEY", "") or st.query_params.get('api_key', '')
             or st.session_state.get("OPENAI_API_KEY", ""),
         )
         st.session_state["OPENAI_API_KEY"] = openai_api_key

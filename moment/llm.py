@@ -1,5 +1,5 @@
 from openai import OpenAI
-from everytime.prompt import prompt
+from moment.prompt import prompt
 
 
 def get_answer(api_key, time):

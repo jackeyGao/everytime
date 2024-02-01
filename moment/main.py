@@ -3,7 +3,7 @@ import streamlit as st
 from datetime import datetime
 from datetime import timezone
 from datetime import timedelta
-from everytime.llm import get_answer
+from moment.llm import get_answer
 
 tz = timezone(
     timedelta(hours=8),
@@ -14,7 +14,7 @@ colors = ['blue', 'green', 'orange', 'red', 'violet', 'gray', 'rainbow']
 emojis = ['🧸', '🎊', '🎉', '🎎', '🪭', '🏮', '🏮']
 
 page_icon = "🧸"
-page_title = "EveryTime GPT"
+page_title = "Moment GPT"
 
 
 answer = """
@@ -30,7 +30,7 @@ st.set_page_config(
 )
 # sidebar()
 
-style = open('everytime/style.css').read()
+style = open('moment/style.css').read()
 
 st.markdown(f"""
 <style>

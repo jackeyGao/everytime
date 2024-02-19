@@ -64,15 +64,19 @@ while True:
         st.session_state["OPENAI_API_KEY"] = openai_api_key
         time.sleep(1)
     else:
-        answer = get_answer(
-            api_key=openai_api_key, 
-            time=datetime.now(tz=tz), 
-            params=st.query_params
-        )
-        if emoji.is_emoji(answer[0]):
-            container.success(body=answer.replace(answer[0], ''), icon=answer[0])
-        else:
-            container.success(body=answer, icon=page_icon)
+        try:
+            answer = get_answer(
+                api_key=openai_api_key, 
+                time=datetime.now(tz=tz), 
+                params=st.query_params
+            )
+
+            if emoji.is_emoji(answer[0]):
+                container.success(body=answer.replace(answer[0], ''), icon=answer[0])
+            else:
+                container.success(body=answer, icon=page_icon)
+        except Exception as e:
+            container.error(str(e))
 
         time.sleep(60)
 
